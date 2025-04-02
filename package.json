@@ -1,0 +1,49 @@
+{
+  "name": "file-copy-extension",
+  "version": "1.0.0",
+  "publisher": "yourname",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LBroKerR/File-Collector-for-Arduino"
+  },
+  "engines": { "vscode": "^1.98.0" },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:file-copy-extension.copyFiles",
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "file-copy-extension.copyFiles",
+        "title": "Copy Files"
+      }
+    ],
+    "configuration": {
+      "title": "File Copy Extension",
+      "properties": {
+        "fileCopyExtension.sourcePath": {
+          "type": "string",
+          "default": "",
+          "description": "Source directory path"
+        },
+        "fileCopyExtension.destinationPath": {
+          "type": "string",
+          "default": "",
+          "description": "Destination directory path"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.98.0",
+    "@types/node": "20.x",
+    "eslint": "^9.23.0",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
